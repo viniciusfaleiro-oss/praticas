@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardioSim - Simulador Cardíaco</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <div class="marca">
+            <div>
+                <h1>CardioSim</h1>
+                <p>Simulador cardíaco</p>
+            </div>
+        </div>
+        <span class="selo">SIMULAÇÃO</span>
+    </header>
+
+    <main class="container">
+        <section class="introducao">
+            <span class="etiqueta">CIÊNCIA E TECNOLOGIA</span>
+            <h2>Energia, cafeína e frequência cardíaca</h2>
+            <p>
+                Altere os parâmetros e observe o comportamento dos batimentos cardíacos ao longo do tempo.
+            </p>
+        </section>
+
+        <section class="painel">
+            <h3>Cenário</h3>
+
+            <div class="controle">
+                <div class="linha">
+                    <label for="latas">Quantidade de latas</label>
+                    <output id="valorLatas">2 latas</output>
+                </div>
+                <input id="latas" type="range" min="0" max="10"
+                       step="1" value="2">
+                <div class="limites"><span>0</span><span>10 latas</span></div>
+            </div>
+
+            <div class="controle">
+                <div class="linha">
+                    <label for="duracao">Duração da simulação</label>
+                    <output id="valorDuracao">6 horas</output>
+                </div>
+                <input id="duracao" type="range" min="1" max="12"
+                       step="1" value="6">
+                <div class="limites"><span>1 hora</span><span>12 horas</span></div>
+            </div>
+
+            <div class="controle">
+                <div class="linha">
+                    <label for="bpmInicial">BPM inicial </label>
+                    <output id="valorBpmInicial">70 BPM</output>
+                </div>
+                <input id="bpmInicial" type="range" min="50" max="120"
+                       step="1" value="70">
+                <div class="limites"><span>50 BPM</span><span>120 BPM</span></div>
+            </div>
+
+            <div class="botoes">
+                <button id="iniciar" type="button">Iniciar simulação</button>
+                <button id="reiniciar" type="button" class="secundario">
+                    Reiniciar
+                </button>
+            </div>
+
+            <p id="mensagem" class="mensagem" aria-live="polite">
+                Ajuste as barras ou inicie a simulação.
+            </p>
+        </section>
+
+        <section class="indicadores">
+            <article class="cartao">
+                <span>Frequência cardíaca</span>
+                <div class="numero">
+                    <strong id="bpm">70</strong><span>BPM</span>
+                </div>
+                <p id="situacao">Valor hipotético inicial</p>
+            </article>
+
+            <article class="cartao">
+                <span>Tempo simulado</span>
+                <div class="numero">
+                    <strong id="tempo">0</strong><span>horas</span>
+                </div>
+                <p id="progressoTexto">0% concluído</p>
+            </article>
+        </section>
+
+        <section class="painel grafico-painel">
+            <div class="cabecalho-grafico">
+                <div>
+                    <h3>Gráfico de frequência cardíaca</h3>
+                    <p>Valores hipotéticos em batimentos por minuto</p>
+                </div>
+                <span class="legenda">● Cenário selecionado</span>
+            </div>
+
+            <div class="area-grafico">
+                <canvas id="grafico" role="img"
+                        aria-label="Gráfico hipotético de frequência cardíaca ao longo do tempo">
+                    Seu navegador não suporta canvas.
+                </canvas>
+            </div>
+
+            <div class="barra-fundo">
+                <div id="progressoBarra"></div>
+            </div>
+            <p class="nota-grafico">
+                A linha tracejada representa o valor inicial configurado.
+            </p>
+        </section>
+
+        <section class="aviso">
+            <h3>Importante</h3>
+            <p>
+                Este é um modelo matemático educativo, não uma previsão
+                médica nem uma representação validada da resposta à cafeína.
+                Os efeitos reais variam entre pessoas e bebidas. Não use
+                o simulador para decidir quanto energético consumir.
+            </p>
+        </section>
+
+        <footer>CardioSim, 2026 - HTML, CSS e JavaScript
+            <br>Lucas Kaefer, Murilo Berger, Pedro Sulsbacher e Vinícius Faleiro<br>
+        </footer>
+    </main>
+</body>
+</html>
